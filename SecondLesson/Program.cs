@@ -6,47 +6,50 @@ namespace secondLesson
     {
         static void Main ()
         {
-            float userInput, result;
-            
-            Console.Write("Input float number: ");
+            int x = 5;
+            bool trueConst = true;
+            bool falseConst = false;
 
-            //userInput = Convert.ToDouble(Console.ReadLine());
-            userInput = float.Parse(Console.ReadLine());
-            
-            result = userInput + 10.3f;
-
-            result *= 1.5f;
-            
-            //result = userInput - 10.3f;
-            //result = userInput * 10.3f;
-            //result = userInput / 10.3f;
-            //result = userInput % 10.3f;
-            
-            //int a = 5, b = 10;
-            //int res = a % b;
-
-            Console.WriteLine("Result: " + result);
+            if (x == 5 || x !=6)
+            {
+                Console.WriteLine(trueConst);
+            }
+            else if (x != 5) 
+            {
+                Console.WriteLine(falseConst);
+            }
 
             Console.WriteLine("----------");
 
-            // cw (+tab +tab) = Console.WriteLine();
+            Console.WriteLine("Enter name: ");
+            string role = Console.ReadLine();
+            if(role == "Admin")
+            {
+                Console.WriteLine("Enter User name: ");
+                string userName = Console.ReadLine();
+                Console.WriteLine($"Enter {userName} age: ");
+                short age = Convert.ToInt16(Console.ReadLine());
 
-            //Console.WriteLine(Math.PI);
-            //Console.WriteLine(Math.E);
-            //Console.WriteLine(Math.Abs(-10));
-            //Console.WriteLine(Math.Ceiling(10.11f)); // To higher number
-            //Console.WriteLine(Math.Floor(10.11f)); // To lower number
-            //Console.WriteLine(Math.Round(10.11f)); // Just round number
+                if (age <= 0 || age > 99)
+                {
+                    Console.WriteLine("Error. Wrong age!");
+                    Console.WriteLine($"Enter {userName} real age: ");
+                    age = Convert.ToInt16(Console.ReadLine());
+                }
 
-            //const int myInt = 1;
-
-            Console.WriteLine("Enter radius of cirlce: ");
-
-            double radius = Convert.ToDouble(Console.ReadLine());
-            double area = Math.PI * Math.Pow(radius, 2);
-
-            Console.WriteLine("Area of circle with radius {0} equals {1}", radius, area);
-
+                if (age <= 0 || age > 99)
+                {
+                    Console.WriteLine("Error. Wrong age!");
+                    age = 1;
+                } else
+                {
+                    Console.WriteLine($"User's age: {age}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Non admino.");
+            }
         }
     }
 }
