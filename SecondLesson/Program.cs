@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace secondLesson
 {
@@ -6,16 +7,46 @@ namespace secondLesson
     {
         static void Main ()
         {
-            short userInput = Convert.ToInt16 (Console.ReadLine ());
-
-            switch (userInput)
+            for (int i = 1; i < 10; i *= 2)
             {
-                case 5: Console.WriteLine("Num is 5");
-                    break;
-                case 6: Console.WriteLine("Num is 6");
-                    break;
-                default: Console.WriteLine("I cant read number.");
-                    break;
+                Console.WriteLine ($"Element: {i}");
+            }
+
+            int j = -100;
+            while (j < 0)
+            {
+                j -= 10;
+                Console.WriteLine($"Element: {j}");
+            }
+
+            bool isHasCar = true;
+            string sold;
+            while (isHasCar) {
+                sold = Console.ReadLine ();
+                switch (sold) 
+                {
+                    case "end":
+                        isHasCar = false;
+                        break;
+                    default:
+                        Console.WriteLine("Not sold.");
+                        break;
+                }
+            }
+
+            byte k = 100;
+            do {
+                Console.WriteLine($"Element: {k}");
+                k--;
+            } while (k < 10);
+
+            for(short i = 0; i < 10; i++)
+            {
+                //if (i > 5) 
+                //    break;
+                if (i % 2 == 0)
+                    continue;
+                Console.WriteLine($"Element: {i}");
             }
         }
     }
