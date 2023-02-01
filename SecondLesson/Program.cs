@@ -8,41 +8,45 @@ namespace secondLesson
     {
         static void Main ()
         {
-            short[] nums = { 5, 6, 7, 8, 5, 3, 4 };
 
-            short[,] secnums = {
-                {
-                    1, 2, 3,
-                },
-                {
-                    1, 2, 3
-                }
-            };
+            //firstFunc(34);
 
-            foreach (short elem in secnums)
+            //int newNum = 10;
+
+            //firstFunc(newNum);
+
+            //Console.WriteLine(sumMe(5, 5));
+
+            //int myNums = sumMe(1, 1);
+
+            //firstFunc(myNums.ToString());
+
+            byte[] nums = { 1, 2, 3, 4, 5 };
+
+            firstFunc(SumMeToo(nums).ToString());
+        }
+
+        public static void firstFunc(string paramNew)
+        {
+            Console.WriteLine($"{paramNew}");
+        }
+
+        public static int sumMe(int first, int second)
+        {
+            int mySum = first + second;
+
+            return mySum;
+        }
+
+        public static byte SumMeToo(byte[] arr)
+        {
+            byte finSum = 0;
+            foreach (byte b in arr)
             {
-                Console.WriteLine($"Element: {elem}");
+                finSum += b;
             }
 
-            List<int> numbers = new List<int>()
-            {
-                1, 2, 3
-            };
-
-
-            numbers.Add(440);
-            numbers.Add(5);
-            numbers.Add(144);
-
-            //numbers.Remove(644);
-            numbers.Sort();
-            numbers.Reverse();
-            numbers.Clear();
-
-            foreach(int elem in numbers)
-            {
-                Console.WriteLine($"Element is: {elem}");
-            }
+            return finSum;
         }
     }
 }
