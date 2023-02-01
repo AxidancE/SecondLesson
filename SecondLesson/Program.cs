@@ -1,52 +1,60 @@
 ﻿using System;
-using System.Linq.Expressions;
-using System.Collections.Generic;
+//using System.Linq.Expressions;
+//using System.Collections.Generic;
+using System.IO;
 
 namespace secondLesson
 {
     class Program
     {
-        static void Main ()
+        static void Main()
         {
+            //string word = "Hello";
+            //word += " world!";
 
-            //firstFunc(34);
+            ////Console.WriteLine(word.Length);
+            ////word = String.Concat(word, " New words.");
 
-            //int newNum = 10;
 
-            //firstFunc(newNum);
 
-            //Console.WriteLine(sumMe(5, 5));
+            //Console.WriteLine(String.Compare(word, "Hello world!"));
+            //// 0 - equals
+            //// 1 - not equals
+            //// -1 - partially equals.
 
-            //int myNums = sumMe(1, 1);
+            //string people = "Alex,Bob,John";
 
-            //firstFunc(myNums.ToString());
+            //string[] names = people.Split(',');
 
-            byte[] nums = { 1, 2, 3, 4, 5 };
+            //foreach (string name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
 
-            firstFunc(SumMeToo(nums).ToString());
-        }
+            //people = String.Join(", ", names);
+            //Console.WriteLine(people);
 
-        public static void firstFunc(string paramNew)
-        {
-            Console.WriteLine($"{paramNew}");
-        }
+            ////Console.WriteLine(word.Trim());
+            //Console.WriteLine(word.Substring(0, word.Length - 1));
 
-        public static int sumMe(int first, int second)
-        {
-            int mySum = first + second;
+            System.Console.Write("Enter text:");
+            string text = Console.ReadLine();
 
-            return mySum;
-        }
-
-        public static byte SumMeToo(byte[] arr)
-        {
-            byte finSum = 0;
-            foreach (byte b in arr)
+            using (FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate))
             {
-                finSum += b;
+                byte[] array = System.Text.Encoding.Default.GetBytes(text);
+
+                stream.Write(array, 0, array.Length);
             }
 
-            return finSum;
+            using (FileStream stream1 = File.OpenRead("info.txt"))
+            {
+                byte[] array = new byte[stream1.Length];
+                stream1.Read(array, 0, array.Length);
+
+                string textFromFile = System.Text.Encoding.Default.GetString(array);
+                Console.WriteLine(textFromFile);
+            }
         }
     }
 }
