@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq.Expressions;
+using System.Collections.Generic;
 
 namespace secondLesson
 {
@@ -7,46 +8,40 @@ namespace secondLesson
     {
         static void Main ()
         {
-            for (int i = 1; i < 10; i *= 2)
-            {
-                Console.WriteLine ($"Element: {i}");
-            }
+            short[] nums = { 5, 6, 7, 8, 5, 3, 4 };
 
-            int j = -100;
-            while (j < 0)
-            {
-                j -= 10;
-                Console.WriteLine($"Element: {j}");
-            }
-
-            bool isHasCar = true;
-            string sold;
-            while (isHasCar) {
-                sold = Console.ReadLine ();
-                switch (sold) 
+            short[,] secnums = {
                 {
-                    case "end":
-                        isHasCar = false;
-                        break;
-                    default:
-                        Console.WriteLine("Not sold.");
-                        break;
+                    1, 2, 3,
+                },
+                {
+                    1, 2, 3
                 }
+            };
+
+            foreach (short elem in secnums)
+            {
+                Console.WriteLine($"Element: {elem}");
             }
 
-            byte k = 100;
-            do {
-                Console.WriteLine($"Element: {k}");
-                k--;
-            } while (k < 10);
-
-            for(short i = 0; i < 10; i++)
+            List<int> numbers = new List<int>()
             {
-                //if (i > 5) 
-                //    break;
-                if (i % 2 == 0)
-                    continue;
-                Console.WriteLine($"Element: {i}");
+                1, 2, 3
+            };
+
+
+            numbers.Add(440);
+            numbers.Add(5);
+            numbers.Add(144);
+
+            //numbers.Remove(644);
+            numbers.Sort();
+            numbers.Reverse();
+            numbers.Clear();
+
+            foreach(int elem in numbers)
+            {
+                Console.WriteLine($"Element is: {elem}");
             }
         }
     }
