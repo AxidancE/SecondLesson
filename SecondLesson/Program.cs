@@ -17,6 +17,10 @@ namespace Prime
             //bot.weight = 800;
             //bot.coordinates = new byte[] { 10, 10, 10 };
 
+            Robot bot1 = new Robot("Bot1");
+            bot1.Weight = -100;
+            Console.WriteLine(bot1.Weight);
+
             //Console.WriteLine($"{bot.name}, weight: {bot.weight}");
 
             //Robot killer = new Robot();

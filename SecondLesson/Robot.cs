@@ -13,10 +13,34 @@ namespace SecondLesson
         private static int count;
 
         private string name;
-        
+
         private int weight;
 
         private byte[] coordinates;
+
+        public int Weight 
+        {
+            get 
+            {
+                Console.Write("Результат: ");
+                return this.weight;
+            }
+
+            set
+            {
+                if (value < 1)
+                {
+                    this.weight = 1;
+                }
+                else if (value > 5000)
+                {
+                    this.Weight = 5000;
+                }
+                else this.weight = value;
+            }
+        }
+
+        public int Width { private get; set; }
 
         public Robot(string name, int weight, byte[] coordinates)
         {
@@ -25,7 +49,13 @@ namespace SecondLesson
             count++;
         }
 
-        public Robot() {
+        public Robot()
+        {
+            count++;
+        }
+
+        public Robot(string name) {
+            this.name = name;
             count++;
         }
 
