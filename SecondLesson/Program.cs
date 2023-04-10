@@ -1,60 +1,29 @@
-﻿using System;
-//using System.Linq.Expressions;
-//using System.Collections.Generic;
-using System.IO;
+﻿using SecondLesson;
+using System;
 
-namespace secondLesson
+namespace Prime
 {
     class Program
     {
-        static void Main()
+        static void Main() 
         {
-            //string word = "Hello";
-            //word += " world!";
+            Robot bot = new Robot();
 
-            ////Console.WriteLine(word.Length);
-            ////word = String.Concat(word, " New words.");
+            bot.setValues("Bob", 800, new byte[] { 10, 10, 10 });
+            bot.printValues();
 
+            bot.setValues("Killah", 1000, new byte[] { 0, 0, 0 });
+            bot.printValues();
+            //bot.name = "Bob";
+            //bot.weight = 800;
+            //bot.coordinates = new byte[] { 10, 10, 10 };
 
+            //Console.WriteLine($"{bot.name}, weight: {bot.weight}");
 
-            //Console.WriteLine(String.Compare(word, "Hello world!"));
-            //// 0 - equals
-            //// 1 - not equals
-            //// -1 - partially equals.
-
-            //string people = "Alex,Bob,John";
-
-            //string[] names = people.Split(',');
-
-            //foreach (string name in names)
-            //{
-            //    Console.WriteLine(name);
-            //}
-
-            //people = String.Join(", ", names);
-            //Console.WriteLine(people);
-
-            ////Console.WriteLine(word.Trim());
-            //Console.WriteLine(word.Substring(0, word.Length - 1));
-
-            System.Console.Write("Enter text:");
-            string text = Console.ReadLine();
-
-            using (FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate))
-            {
-                byte[] array = System.Text.Encoding.Default.GetBytes(text);
-
-                stream.Write(array, 0, array.Length);
-            }
-
-            using (FileStream stream1 = File.OpenRead("info.txt"))
-            {
-                byte[] array = new byte[stream1.Length];
-                stream1.Read(array, 0, array.Length);
-
-                string textFromFile = System.Text.Encoding.Default.GetString(array);
-                Console.WriteLine(textFromFile);
-            }
+            //Robot killer = new Robot();
+            //killer.weight = 1000;
+            //killer.name = "Killah";
+            //killer.coordinates = new byte[] { 0, 0, 0 };
         }
     }
 }
