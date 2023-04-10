@@ -18,10 +18,10 @@ namespace SecondLesson
 
         private byte[] coordinates;
 
-        public Robot(string _name, int _weight, byte[] _coorditanes)
+        public Robot(string name, int weight, byte[] coordinates)
         {
             Console.WriteLine("Obj has been created.");
-            setValues(_name, _weight, _coorditanes);
+            setValues(name, weight, coordinates);
             count++;
         }
 
@@ -29,17 +29,17 @@ namespace SecondLesson
             count++;
         }
 
-        public void setValues(string _name, int _weight, byte[] _coorditanes)
+        public void setValues(string name, int weight, byte[] coordinates)
         {
-            name = _name;
-            weight = _weight;
-            coordinates = _coorditanes;
+            this.name = name;
+            this.weight = weight;
+            this.coordinates = coordinates;
         }
 
         public void printValues()
         {
-            Console.WriteLine($"{name}, weight: {weight}. Coordinates:");
-            foreach (var el in coordinates) Console.WriteLine(el);
+            Console.WriteLine($"{this.name}, weight: {this.weight}. Coordinates:");
+            foreach (var el in this.coordinates) Console.WriteLine(el);
         }
 
         public static void Print()
