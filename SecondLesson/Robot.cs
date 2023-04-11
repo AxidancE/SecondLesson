@@ -20,6 +20,14 @@ namespace SecondLesson
 
         protected string surname;
 
+        public string Name { 
+            get
+            {
+                return name;
+            }
+            private set { } 
+        }
+
         public int Weight 
         {
             get 
