@@ -13,7 +13,13 @@ namespace SecondLesson
         public Killer(string name, int weight, byte[] coordinates, int health) : base(name, weight, coordinates)
         {
             this.Health = health;
+        }
+
+        public override void printValues()
+        {
             base.printValues();
+
+            Console.WriteLine($"Health:{ this.Health }");
         }
 
         public int Health { get; set; }

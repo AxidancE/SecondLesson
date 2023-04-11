@@ -76,7 +76,7 @@ namespace SecondLesson
             this.coordinates = coordinates;
         }
 
-        public void printValues()
+        public virtual void printValues()
         {
             Console.WriteLine($"{this.name}, weight: {this.weight}. Coordinates:");
             foreach (var el in this.coordinates) Console.WriteLine(el);
