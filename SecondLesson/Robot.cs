@@ -18,11 +18,13 @@ namespace SecondLesson
 
         private byte[] coordinates;
 
+        protected string surname;
+
         public int Weight 
         {
             get 
             {
-                Console.Write("Результат: ");
+                Console.Write("Result: ");
                 return this.weight;
             }
 
